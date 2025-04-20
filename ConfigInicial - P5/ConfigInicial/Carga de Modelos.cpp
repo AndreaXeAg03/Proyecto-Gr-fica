@@ -111,7 +111,7 @@ int main()
     Shader shader("Shader/modelLoading.vs", "Shader/modelLoading.frag");
 
     // Load models
-    Model dog((char*)"Models/small2.obj");
+    Model dog((char*)"Models/A.obj");
     glm::mat4 projection = glm::mat4(1);
 
     projection = glm::perspective(glm::radians(45.0f), (GLfloat)screenWidth / (GLfloat)screenHeight, 0.01f, 1000000.0f);//FOV, Radio de aspecto,znear,zfar
@@ -297,8 +297,6 @@ int main()
 
 
         //-------------------------------FIN  EJES Y RETICULA
-
-
 
 
         // Swap the buffers
