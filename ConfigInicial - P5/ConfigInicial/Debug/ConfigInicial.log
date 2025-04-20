@@ -1,0 +1,8 @@
+﻿  Carga de Modelos.cpp
+C:\Users\ANDREA\OneDrive\Documentos\Computación gráfica\Laboratorio\ConfigInicial - P5\ConfigInicial\Carga de Modelos.cpp(374,25): warning C4244: '+=': conversión de 'double' a 'float'; posible pérdida de datos
+C:\Users\ANDREA\OneDrive\Documentos\Computación gráfica\Laboratorio\ConfigInicial - P5\ConfigInicial\Carga de Modelos.cpp(375,25): warning C4244: '+=': conversión de 'double' a 'float'; posible pérdida de datos
+C:\Users\ANDREA\OneDrive\Documentos\Computación gráfica\Laboratorio\ConfigInicial - P5\ConfigInicial\Carga de Modelos.cpp(381,37): warning C4244: '+=': conversión de 'double' a 'float'; posible pérdida de datos
+C:\Users\ANDREA\OneDrive\Documentos\Computación gráfica\Laboratorio\ConfigInicial - P5\ConfigInicial\Carga de Modelos.cpp(387,17): warning C4244: '+=': conversión de 'double' a 'float'; posible pérdida de datos
+C:\Users\ANDREA\OneDrive\Documentos\Computación gráfica\Laboratorio\ConfigInicial - P5\ConfigInicial\Carga de Modelos.cpp(388,17): warning C4244: '+=': conversión de 'double' a 'float'; posible pérdida de datos
+C:\Users\ANDREA\OneDrive\Documentos\Computación gráfica\Laboratorio\ConfigInicial - P5\ConfigInicial\Carga de Modelos.cpp(417,21): warning C4244: '+=': conversión de 'double' a 'float'; posible pérdida de datos
+  ConfigInicial.vcxproj -> C:\Users\ANDREA\OneDrive\Documentos\Computación gráfica\Laboratorio\ConfigInicial - P5\Debug\ConfigInicial.exe
