@@ -111,15 +111,15 @@ int main()
     Shader shader("Shader/modelLoading.vs", "Shader/modelLoading.frag");
 
     // Load models
-    Model dog((char*)"Models/A.obj");
+    Model dog((char*)"Models/small2.obj");
     glm::mat4 projection = glm::mat4(1);
 
     projection = glm::perspective(glm::radians(45.0f), (GLfloat)screenWidth / (GLfloat)screenHeight, 0.01f, 1000000.0f);//FOV, Radio de aspecto,znear,zfar
     glm::vec3 color = glm::vec3(0.0f, 0.0f, 1.0f);
 
 
-   //----------------------------------------------INICIO RETICULA Y EJES.--------------
-   // 
+    //----------------------------------------------INICIO RETICULA Y EJES.--------------
+    // 
 
     float axisVertices[] = {
         // Ejes coordenados
@@ -255,8 +255,8 @@ int main()
 
 
 
-       //-------------------------DIUBJAR EJES Y RETICULA
-       // Dibujar los ejes sin rotación (matriz de modelo identidad)
+        //-------------------------DIUBJAR EJES Y RETICULA
+        // Dibujar los ejes sin rotación (matriz de modelo identidad)
         glm::mat4 axisModel = glm::mat4(1.0f); // Matriz de modelo sin rotación
         glUniformMatrix4fv(glGetUniformLocation(shader.Program, "model"), 1, GL_FALSE, glm::value_ptr(axisModel));
 
@@ -306,7 +306,7 @@ int main()
     }
 
 
- 
+
     glDeleteVertexArrays(1, &axisVAO);
     glDeleteBuffers(1, &axisVBO);
     glDeleteVertexArrays(1, &gridVAO);
