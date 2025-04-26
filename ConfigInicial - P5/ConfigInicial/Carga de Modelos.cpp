@@ -32,7 +32,7 @@ void MouseButtonCallback(GLFWwindow* window, int button, int action, int mods);
 void ScrollCallback(GLFWwindow* window, double xoffset, double yoffset);
 
 // Camera system
-glm::vec3 cameraPos = glm::vec3(0.0f, 0.0f, 3.0f);
+glm::vec3 cameraPos = glm::vec3(0.0f, 1.0f, 8.0f);
 glm::vec3 cameraFront = glm::vec3(0.0f, 0.0f, -1.0f);
 glm::vec3 cameraUp = glm::vec3(0.0f, 1.0f, 0.0f);
 
@@ -64,7 +64,7 @@ int main()
     glfwWindowHint(GLFW_RESIZABLE, GL_FALSE);
 
     // Create a GLFWwindow object that we can use for GLFW's functions
-    GLFWwindow* window = glfwCreateWindow(WIDTH, HEIGHT, "Carga de modelos y camara sintetica", nullptr, nullptr);
+    GLFWwindow* window = glfwCreateWindow(WIDTH, HEIGHT, "Model loading and synthetic camera", nullptr, nullptr);
 
     if (nullptr == window)
     {
@@ -95,53 +95,53 @@ int main()
     Shader shader("Shader/modelLoading.vs", "Shader/modelLoading.frag");
 
     // Load models
-    Model dog((char*)"Models/A.obj");
+    Model dog((char*)"Models/casa.obj");
 
     // Projection matrix
     glm::mat4 projection = glm::perspective(glm::radians(fov), (GLfloat)screenWidth / (GLfloat)screenHeight, 0.1f, 100.0f);
     glm::vec3 color = glm::vec3(0.0f, 0.0f, 1.0f);
 
-    //----------------------------------------------INICIO RETICULA Y EJES.--------------
+    //----------------------------------------------GRID AND AXES START--------------
     float axisVertices[] = {
-        // Ejes coordenados
-        0.0f, 0.0f, 0.0f, 1.0f, 0.0f, 0.0f, // Origen a X (rojo)
+        // Coordinate axes
+        0.0f, 0.0f, 0.0f, 1.0f, 0.0f, 0.0f, // Origin to X (red)
         1.0f, 0.0f, 0.0f, 1.0f, 0.0f, 0.0f,
-        0.0f, 0.0f, 0.0f, 0.0f, 0.0f, 1.0f, // Origen a Y (azul)
+        0.0f, 0.0f, 0.0f, 0.0f, 0.0f, 1.0f, // Origin to Y (blue)
         0.0f, 1.0f, 0.0f, 0.0f, 0.0f, 1.0f,
-        0.0f, 0.0f, 0.0f, 0.0f, 1.0f, 0.0f, // Origen a Z (verde)
+        0.0f, 0.0f, 0.0f, 0.0f, 1.0f, 0.0f, // Origin to Z (green)
         0.0f, 0.0f, 1.0f, 0.0f, 1.0f, 0.0f,
     };
 
-    // Crear un VAO y un VBO para los ejes
+    // Create VAO and VBO for axes
     GLuint axisVBO, axisVAO;
     glGenVertexArrays(1, &axisVAO);
     glGenBuffers(1, &axisVBO);
 
-    // Vincular el VAO y el VBO para los ejes
+    // Bind VAO and VBO for axes
     glBindVertexArray(axisVAO);
     glBindBuffer(GL_ARRAY_BUFFER, axisVBO);
     glBufferData(GL_ARRAY_BUFFER, sizeof(axisVertices), axisVertices, GL_STATIC_DRAW);
 
-    // Configurar el atributo de posición para los ejes
+    // Configure position attribute for axes
     glVertexAttribPointer(0, 3, GL_FLOAT, GL_FALSE, 6 * sizeof(GLfloat), (GLvoid*)0);
     glEnableVertexAttribArray(0);
 
-    // Configurar el atributo de color para los ejes
+    // Configure color attribute for axes
     glVertexAttribPointer(1, 3, GL_FLOAT, GL_FALSE, 6 * sizeof(GLfloat), (GLvoid*)(3 * sizeof(GLfloat)));
     glEnableVertexAttribArray(1);
 
-    // Desvincular el VBO y el VAO
+    // Unbind VBO and VAO
     glBindBuffer(GL_ARRAY_BUFFER, 0);
     glBindVertexArray(0);
 
-    //Inicio de la retícula--------------
-    // Definir los vértices de la retícula (una cuadrícula en el plano XZ)
+    // Grid initialization--------------
+    // Define grid vertices (a grid on the XZ plane)
     std::vector<float> gridVertices;
-    float gridSize = 10.0f;       // Tamaño de la retícula (de -1 a 1 en X y Z)
-    float gridStep = 0.9999f;    // Separación entre líneas
-    float gridColor = 0.2f;      // Color gris para la retícula
+    float gridSize = 10.0f;       // Grid size (from -1 to 1 in X and Z)
+    float gridStep = 0.9999f;    // Distance between lines
+    float gridColor = 0.2f;      // Gray color for the grid
 
-    // Líneas paralelas al eje X
+    // Lines parallel to X axis
     for (float z = -gridSize; z <= gridSize; z += gridStep) {
         gridVertices.push_back(-gridSize); gridVertices.push_back(0.0f); gridVertices.push_back(z);
         gridVertices.push_back(gridColor); gridVertices.push_back(gridColor); gridVertices.push_back(gridColor);
@@ -149,7 +149,7 @@ int main()
         gridVertices.push_back(gridColor); gridVertices.push_back(gridColor); gridVertices.push_back(gridColor);
     }
 
-    // Líneas paralelas al eje Z
+    // Lines parallel to Z axis
     for (float x = -gridSize; x <= gridSize; x += gridStep) {
         gridVertices.push_back(x); gridVertices.push_back(0.0f); gridVertices.push_back(-gridSize);
         gridVertices.push_back(gridColor); gridVertices.push_back(gridColor); gridVertices.push_back(gridColor);
@@ -157,28 +157,28 @@ int main()
         gridVertices.push_back(gridColor); gridVertices.push_back(gridColor); gridVertices.push_back(gridColor);
     }
 
-    // Crear un VAO y un VBO para la retícula
+    // Create VAO and VBO for grid
     GLuint gridVBO, gridVAO;
     glGenVertexArrays(1, &gridVAO);
     glGenBuffers(1, &gridVBO);
 
-    // Vincular el VAO y el VBO para la retícula
+    // Bind VAO and VBO for grid
     glBindVertexArray(gridVAO);
     glBindBuffer(GL_ARRAY_BUFFER, gridVBO);
     glBufferData(GL_ARRAY_BUFFER, gridVertices.size() * sizeof(float), gridVertices.data(), GL_STATIC_DRAW);
 
-    // Configurar el atributo de posición para la retícula
+    // Configure position attribute for grid
     glVertexAttribPointer(0, 3, GL_FLOAT, GL_FALSE, 6 * sizeof(float), (void*)0);
     glEnableVertexAttribArray(0);
 
-    // Configurar el atributo de color para la retícula
+    // Configure color attribute for grid
     glVertexAttribPointer(1, 3, GL_FLOAT, GL_FALSE, 6 * sizeof(float), (void*)(3 * sizeof(float)));
     glEnableVertexAttribArray(1);
 
-    // Desvincular el VBO y el VAO
+    // Unbind VBO and VAO
     glBindBuffer(GL_ARRAY_BUFFER, 0);
     glBindVertexArray(0);
-    // -------------------------------------------------- Final de la retícula Y EJES--------------
+    // -------------------------------------------------- End of grid AND AXES--------------
 
     // Set callbacks
     glfwSetCursorPosCallback(window, MouseCallback);
@@ -200,7 +200,7 @@ int main()
         glfwPollEvents();
 
         // Clear buffers
-        glClearColor(1.0f, 1.0f, 1.0f, 1.0f); // blanco
+        glClearColor(1.0f, 1.0f, 1.0f, 1.0f); // white
         glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 
         shader.Use();
@@ -220,14 +220,14 @@ int main()
         glUniformMatrix4fv(glGetUniformLocation(shader.Program, "model"), 1, GL_FALSE, glm::value_ptr(model));
         dog.Draw(shader);
 
-        //-------------------------DIBUJAR EJES Y RETICULA
-        // Dibujar los ejes sin rotación (matriz de modelo identidad)
+        //-------------------------DRAW AXES AND GRID
+        // Draw axes without rotation (identity model matrix)
         glm::mat4 axisModel = glm::mat4(1.0f);
         glUniformMatrix4fv(glGetUniformLocation(shader.Program, "model"), 1, GL_FALSE, glm::value_ptr(axisModel));
 
-        // Dibujar los ejes
+        // Draw axes
         glBindVertexArray(axisVAO);
-        color = glm::vec3(1.0f, 0.0f, 0.0f); //ROJO
+        color = glm::vec3(1.0f, 0.0f, 0.0f); //RED
         glUniform3fv(shader.getColorLocation(), 1, glm::value_ptr(color));
         glDrawArrays(GL_LINES, 0, 2);
 
@@ -240,7 +240,7 @@ int main()
         glDrawArrays(GL_LINES, 4, 2);
         glBindVertexArray(0);
 
-        // Dibujar LA RETICULA
+        // Draw GRID
         glm::mat4 gridModel = glm::mat4(1.0f);
         glUniformMatrix4fv(glGetUniformLocation(shader.Program, "model"), 1, GL_FALSE, glm::value_ptr(gridModel));
         glBindVertexArray(gridVAO);
@@ -248,7 +248,7 @@ int main()
         glUniform3fv(shader.getColorLocation(), 1, glm::value_ptr(color));
         glDrawArrays(GL_LINES, 0, gridVertices.size() / 6);
         glBindVertexArray(0);
-        //-------------------------------FIN EJES Y RETICULA
+        //-------------------------------END AXES AND GRID
 
         // Swap the buffers
         glfwSwapBuffers(window);
