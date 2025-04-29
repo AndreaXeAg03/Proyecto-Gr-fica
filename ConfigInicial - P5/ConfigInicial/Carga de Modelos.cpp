@@ -96,89 +96,12 @@ int main()
 
     // Load models
     Model dog((char*)"Models/casa.obj");
+    Model Piso((char*)"Models/piso.obj");
+
 
     // Projection matrix
     glm::mat4 projection = glm::perspective(glm::radians(fov), (GLfloat)screenWidth / (GLfloat)screenHeight, 0.1f, 100.0f);
     glm::vec3 color = glm::vec3(0.0f, 0.0f, 1.0f);
-
-    //----------------------------------------------GRID AND AXES START--------------
-    float axisVertices[] = {
-        // Coordinate axes
-        0.0f, 0.0f, 0.0f, 1.0f, 0.0f, 0.0f, // Origin to X (red)
-        1.0f, 0.0f, 0.0f, 1.0f, 0.0f, 0.0f,
-        0.0f, 0.0f, 0.0f, 0.0f, 0.0f, 1.0f, // Origin to Y (blue)
-        0.0f, 1.0f, 0.0f, 0.0f, 0.0f, 1.0f,
-        0.0f, 0.0f, 0.0f, 0.0f, 1.0f, 0.0f, // Origin to Z (green)
-        0.0f, 0.0f, 1.0f, 0.0f, 1.0f, 0.0f,
-    };
-
-    // Create VAO and VBO for axes
-    GLuint axisVBO, axisVAO;
-    glGenVertexArrays(1, &axisVAO);
-    glGenBuffers(1, &axisVBO);
-
-    // Bind VAO and VBO for axes
-    glBindVertexArray(axisVAO);
-    glBindBuffer(GL_ARRAY_BUFFER, axisVBO);
-    glBufferData(GL_ARRAY_BUFFER, sizeof(axisVertices), axisVertices, GL_STATIC_DRAW);
-
-    // Configure position attribute for axes
-    glVertexAttribPointer(0, 3, GL_FLOAT, GL_FALSE, 6 * sizeof(GLfloat), (GLvoid*)0);
-    glEnableVertexAttribArray(0);
-
-    // Configure color attribute for axes
-    glVertexAttribPointer(1, 3, GL_FLOAT, GL_FALSE, 6 * sizeof(GLfloat), (GLvoid*)(3 * sizeof(GLfloat)));
-    glEnableVertexAttribArray(1);
-
-    // Unbind VBO and VAO
-    glBindBuffer(GL_ARRAY_BUFFER, 0);
-    glBindVertexArray(0);
-
-    // Grid initialization--------------
-    // Define grid vertices (a grid on the XZ plane)
-    std::vector<float> gridVertices;
-    float gridSize = 10.0f;       // Grid size (from -1 to 1 in X and Z)
-    float gridStep = 0.9999f;    // Distance between lines
-    float gridColor = 0.2f;      // Gray color for the grid
-
-    // Lines parallel to X axis
-    for (float z = -gridSize; z <= gridSize; z += gridStep) {
-        gridVertices.push_back(-gridSize); gridVertices.push_back(0.0f); gridVertices.push_back(z);
-        gridVertices.push_back(gridColor); gridVertices.push_back(gridColor); gridVertices.push_back(gridColor);
-        gridVertices.push_back(gridSize); gridVertices.push_back(0.0f); gridVertices.push_back(z);
-        gridVertices.push_back(gridColor); gridVertices.push_back(gridColor); gridVertices.push_back(gridColor);
-    }
-
-    // Lines parallel to Z axis
-    for (float x = -gridSize; x <= gridSize; x += gridStep) {
-        gridVertices.push_back(x); gridVertices.push_back(0.0f); gridVertices.push_back(-gridSize);
-        gridVertices.push_back(gridColor); gridVertices.push_back(gridColor); gridVertices.push_back(gridColor);
-        gridVertices.push_back(x); gridVertices.push_back(0.0f); gridVertices.push_back(gridSize);
-        gridVertices.push_back(gridColor); gridVertices.push_back(gridColor); gridVertices.push_back(gridColor);
-    }
-
-    // Create VAO and VBO for grid
-    GLuint gridVBO, gridVAO;
-    glGenVertexArrays(1, &gridVAO);
-    glGenBuffers(1, &gridVBO);
-
-    // Bind VAO and VBO for grid
-    glBindVertexArray(gridVAO);
-    glBindBuffer(GL_ARRAY_BUFFER, gridVBO);
-    glBufferData(GL_ARRAY_BUFFER, gridVertices.size() * sizeof(float), gridVertices.data(), GL_STATIC_DRAW);
-
-    // Configure position attribute for grid
-    glVertexAttribPointer(0, 3, GL_FLOAT, GL_FALSE, 6 * sizeof(float), (void*)0);
-    glEnableVertexAttribArray(0);
-
-    // Configure color attribute for grid
-    glVertexAttribPointer(1, 3, GL_FLOAT, GL_FALSE, 6 * sizeof(float), (void*)(3 * sizeof(float)));
-    glEnableVertexAttribArray(1);
-
-    // Unbind VBO and VAO
-    glBindBuffer(GL_ARRAY_BUFFER, 0);
-    glBindVertexArray(0);
-    // -------------------------------------------------- End of grid AND AXES--------------
 
     // Set callbacks
     glfwSetCursorPosCallback(window, MouseCallback);
@@ -220,46 +143,16 @@ int main()
         glUniformMatrix4fv(glGetUniformLocation(shader.Program, "model"), 1, GL_FALSE, glm::value_ptr(model));
         dog.Draw(shader);
 
-        //-------------------------DRAW AXES AND GRID
-        // Draw axes without rotation (identity model matrix)
-        glm::mat4 axisModel = glm::mat4(1.0f);
-        glUniformMatrix4fv(glGetUniformLocation(shader.Program, "model"), 1, GL_FALSE, glm::value_ptr(axisModel));
-
-        // Draw axes
-        glBindVertexArray(axisVAO);
-        color = glm::vec3(1.0f, 0.0f, 0.0f); //RED
-        glUniform3fv(shader.getColorLocation(), 1, glm::value_ptr(color));
-        glDrawArrays(GL_LINES, 0, 2);
-
-        color = glm::vec3(0.0f, 0.0f, 1.0f); // BLUE
-        glUniform3fv(shader.getColorLocation(), 1, glm::value_ptr(color));
-        glDrawArrays(GL_LINES, 2, 2);
-
-        color = glm::vec3(0.0f, 1.0f, 0.0f); // GREEN
-        glUniform3fv(shader.getColorLocation(), 1, glm::value_ptr(color));
-        glDrawArrays(GL_LINES, 4, 2);
-        glBindVertexArray(0);
-
-        // Draw GRID
-        glm::mat4 gridModel = glm::mat4(1.0f);
-        glUniformMatrix4fv(glGetUniformLocation(shader.Program, "model"), 1, GL_FALSE, glm::value_ptr(gridModel));
-        glBindVertexArray(gridVAO);
-        color = glm::vec3(.1f, .1f, .10f);
-        glUniform3fv(shader.getColorLocation(), 1, glm::value_ptr(color));
-        glDrawArrays(GL_LINES, 0, gridVertices.size() / 6);
-        glBindVertexArray(0);
-        //-------------------------------END AXES AND GRID
+        // Draw the floor model
+        glm::mat4 pisoModel = glm::mat4(1.0f);
+        pisoModel = glm::translate(model, glm::vec3(0.0f, 0.34f, 0.0f));
+        pisoModel = glm::scale(pisoModel, glm::vec3(5.0f, 1.0f, 5.0f));
+        glUniformMatrix4fv(glGetUniformLocation(shader.Program, "model"), 1, GL_FALSE, glm::value_ptr(pisoModel));
+        Piso.Draw(shader);
 
         // Swap the buffers
         glfwSwapBuffers(window);
     }
-
-    glDeleteVertexArrays(1, &axisVAO);
-    glDeleteBuffers(1, &axisVBO);
-    glDeleteVertexArrays(1, &gridVAO);
-    glDeleteBuffers(1, &gridVBO);
-
-    glfwTerminate();
     return 0;
 }
 
