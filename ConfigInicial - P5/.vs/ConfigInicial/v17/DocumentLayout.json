@@ -1,21 +1,21 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "D:\\ProyectoGrafica\\Repositorio Github\\Proyecto-Gr-fica\\ConfigInicial - P5\\",
+  "WorkspaceRootPath": "C:\\Users\\andre\\OneDrive\\Documentos\\GitHub\\Proyecto-Gr-fica\\Proyecto-Gr-fica\\ConfigInicial - P5\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{8495D9E7-F210-4570-BFB0-6FDB173975C0}|ConfigInicial\\ConfigInicial.vcxproj|D:\\ProyectoGrafica\\Repositorio Github\\Proyecto-Gr-fica\\ConfigInicial - P5\\ConfigInicial\\Carga de Modelos.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "AbsoluteMoniker": "D:0:0:{8495D9E7-F210-4570-BFB0-6FDB173975C0}|ConfigInicial\\ConfigInicial.vcxproj|C:\\Users\\andre\\OneDrive\\Documentos\\GitHub\\Proyecto-Gr-fica\\Proyecto-Gr-fica\\ConfigInicial - P5\\ConfigInicial\\Carga de Modelos.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
       "RelativeMoniker": "D:0:0:{8495D9E7-F210-4570-BFB0-6FDB173975C0}|ConfigInicial\\ConfigInicial.vcxproj|solutionrelative:ConfigInicial\\Carga de Modelos.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{8495D9E7-F210-4570-BFB0-6FDB173975C0}|ConfigInicial\\ConfigInicial.vcxproj|D:\\ProyectoGrafica\\Repositorio Github\\Proyecto-Gr-fica\\ConfigInicial - P5\\ConfigInicial\\Shader\\modelLoading.vs||{8B382828-6202-11D1-8870-0000F87579D2}",
+      "AbsoluteMoniker": "D:0:0:{8495D9E7-F210-4570-BFB0-6FDB173975C0}|ConfigInicial\\ConfigInicial.vcxproj|C:\\Users\\andre\\OneDrive\\Documentos\\GitHub\\Proyecto-Gr-fica\\Proyecto-Gr-fica\\ConfigInicial - P5\\ConfigInicial\\Shader\\modelLoading.vs||{8B382828-6202-11D1-8870-0000F87579D2}",
       "RelativeMoniker": "D:0:0:{8495D9E7-F210-4570-BFB0-6FDB173975C0}|ConfigInicial\\ConfigInicial.vcxproj|solutionrelative:ConfigInicial\\Shader\\modelLoading.vs||{8B382828-6202-11D1-8870-0000F87579D2}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{8495D9E7-F210-4570-BFB0-6FDB173975C0}|ConfigInicial\\ConfigInicial.vcxproj|D:\\ProyectoGrafica\\Repositorio Github\\Proyecto-Gr-fica\\ConfigInicial - P5\\ConfigInicial\\Shader\\modelLoading.frag||{8B382828-6202-11D1-8870-0000F87579D2}",
+      "AbsoluteMoniker": "D:0:0:{8495D9E7-F210-4570-BFB0-6FDB173975C0}|ConfigInicial\\ConfigInicial.vcxproj|C:\\Users\\andre\\OneDrive\\Documentos\\GitHub\\Proyecto-Gr-fica\\Proyecto-Gr-fica\\ConfigInicial - P5\\ConfigInicial\\Shader\\modelLoading.frag||{8B382828-6202-11D1-8870-0000F87579D2}",
       "RelativeMoniker": "D:0:0:{8495D9E7-F210-4570-BFB0-6FDB173975C0}|ConfigInicial\\ConfigInicial.vcxproj|solutionrelative:ConfigInicial\\Shader\\modelLoading.frag||{8B382828-6202-11D1-8870-0000F87579D2}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{8495D9E7-F210-4570-BFB0-6FDB173975C0}|ConfigInicial\\ConfigInicial.vcxproj|D:\\ProyectoGrafica\\Repositorio Github\\Proyecto-Gr-fica\\ConfigInicial - P5\\ConfigInicial\\Shader.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "AbsoluteMoniker": "D:0:0:{8495D9E7-F210-4570-BFB0-6FDB173975C0}|ConfigInicial\\ConfigInicial.vcxproj|C:\\Users\\andre\\OneDrive\\Documentos\\GitHub\\Proyecto-Gr-fica\\Proyecto-Gr-fica\\ConfigInicial - P5\\ConfigInicial\\Shader.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
       "RelativeMoniker": "D:0:0:{8495D9E7-F210-4570-BFB0-6FDB173975C0}|ConfigInicial\\ConfigInicial.vcxproj|solutionrelative:ConfigInicial\\Shader.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     }
   ],
@@ -32,11 +32,11 @@
               "$type": "Document",
               "DocumentIndex": 0,
               "Title": "Carga de Modelos.cpp",
-              "DocumentMoniker": "D:\\ProyectoGrafica\\Repositorio Github\\Proyecto-Gr-fica\\ConfigInicial - P5\\ConfigInicial\\Carga de Modelos.cpp",
+              "DocumentMoniker": "C:\\Users\\andre\\OneDrive\\Documentos\\GitHub\\Proyecto-Gr-fica\\Proyecto-Gr-fica\\ConfigInicial - P5\\ConfigInicial\\Carga de Modelos.cpp",
               "RelativeDocumentMoniker": "ConfigInicial\\Carga de Modelos.cpp",
-              "ToolTip": "D:\\ProyectoGrafica\\Repositorio Github\\Proyecto-Gr-fica\\ConfigInicial - P5\\ConfigInicial\\Carga de Modelos.cpp",
+              "ToolTip": "C:\\Users\\andre\\OneDrive\\Documentos\\GitHub\\Proyecto-Gr-fica\\Proyecto-Gr-fica\\ConfigInicial - P5\\ConfigInicial\\Carga de Modelos.cpp",
               "RelativeToolTip": "ConfigInicial\\Carga de Modelos.cpp",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABEAAAAfAAAAAAAAAA==",
+              "ViewState": "AgIAAL0AAAAAAAAAAAAAAGwAAAApAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
               "WhenOpened": "2025-04-19T15:41:52.314Z",
               "EditorCaption": ""
@@ -45,9 +45,9 @@
               "$type": "Document",
               "DocumentIndex": 1,
               "Title": "modelLoading.vs",
-              "DocumentMoniker": "D:\\ProyectoGrafica\\Repositorio Github\\Proyecto-Gr-fica\\ConfigInicial - P5\\ConfigInicial\\Shader\\modelLoading.vs",
+              "DocumentMoniker": "C:\\Users\\andre\\OneDrive\\Documentos\\GitHub\\Proyecto-Gr-fica\\Proyecto-Gr-fica\\ConfigInicial - P5\\ConfigInicial\\Shader\\modelLoading.vs",
               "RelativeDocumentMoniker": "ConfigInicial\\Shader\\modelLoading.vs",
-              "ToolTip": "D:\\ProyectoGrafica\\Repositorio Github\\Proyecto-Gr-fica\\ConfigInicial - P5\\ConfigInicial\\Shader\\modelLoading.vs",
+              "ToolTip": "C:\\Users\\andre\\OneDrive\\Documentos\\GitHub\\Proyecto-Gr-fica\\Proyecto-Gr-fica\\ConfigInicial - P5\\ConfigInicial\\Shader\\modelLoading.vs",
               "RelativeToolTip": "ConfigInicial\\Shader\\modelLoading.vs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
@@ -57,9 +57,9 @@
               "$type": "Document",
               "DocumentIndex": 2,
               "Title": "modelLoading.frag",
-              "DocumentMoniker": "D:\\ProyectoGrafica\\Repositorio Github\\Proyecto-Gr-fica\\ConfigInicial - P5\\ConfigInicial\\Shader\\modelLoading.frag",
+              "DocumentMoniker": "C:\\Users\\andre\\OneDrive\\Documentos\\GitHub\\Proyecto-Gr-fica\\Proyecto-Gr-fica\\ConfigInicial - P5\\ConfigInicial\\Shader\\modelLoading.frag",
               "RelativeDocumentMoniker": "ConfigInicial\\Shader\\modelLoading.frag",
-              "ToolTip": "D:\\ProyectoGrafica\\Repositorio Github\\Proyecto-Gr-fica\\ConfigInicial - P5\\ConfigInicial\\Shader\\modelLoading.frag",
+              "ToolTip": "C:\\Users\\andre\\OneDrive\\Documentos\\GitHub\\Proyecto-Gr-fica\\Proyecto-Gr-fica\\ConfigInicial - P5\\ConfigInicial\\Shader\\modelLoading.frag",
               "RelativeToolTip": "ConfigInicial\\Shader\\modelLoading.frag",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
@@ -69,9 +69,9 @@
               "$type": "Document",
               "DocumentIndex": 3,
               "Title": "Shader.h",
-              "DocumentMoniker": "D:\\ProyectoGrafica\\Repositorio Github\\Proyecto-Gr-fica\\ConfigInicial - P5\\ConfigInicial\\Shader.h",
+              "DocumentMoniker": "C:\\Users\\andre\\OneDrive\\Documentos\\GitHub\\Proyecto-Gr-fica\\Proyecto-Gr-fica\\ConfigInicial - P5\\ConfigInicial\\Shader.h",
               "RelativeDocumentMoniker": "ConfigInicial\\Shader.h",
-              "ToolTip": "D:\\ProyectoGrafica\\Repositorio Github\\Proyecto-Gr-fica\\ConfigInicial - P5\\ConfigInicial\\Shader.h",
+              "ToolTip": "C:\\Users\\andre\\OneDrive\\Documentos\\GitHub\\Proyecto-Gr-fica\\Proyecto-Gr-fica\\ConfigInicial - P5\\ConfigInicial\\Shader.h",
               "RelativeToolTip": "ConfigInicial\\Shader.h",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAAQAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
