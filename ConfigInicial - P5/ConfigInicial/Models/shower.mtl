@@ -1,0 +1,16 @@
+#
+## Alias OBJ Material File
+# Exported from SketchUp, (c) 2000-2012 Trimble Navigation Limited
+
+newmtl _80
+Ka 0.000000 0.000000 0.000000
+Kd 0.121569 0.121569 0.121569
+Ks 0.330000 0.330000 0.330000
+map_Kd shower/_80.jpg
+
+newmtl _101
+Ka 0.000000 0.000000 0.000000
+Kd 0.737255 0.760784 0.756863
+Ks 0.330000 0.330000 0.330000
+map_Kd shower/_101.jpg
+

@@ -37,7 +37,7 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="Carga de Modelos.cpp">
+    <ClCompile Include="Maquina de estados.cpp">
       <Filter>Archivos de recursos</Filter>
     </ClCompile>
   </ItemGroup>

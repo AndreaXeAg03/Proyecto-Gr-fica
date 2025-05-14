@@ -1,11 +1,14 @@
-﻿  Carga de Modelos.cpp
-C:\Users\andre\OneDrive\Documentos\GitHub\Proyecto-Gr-fica\Proyecto-Gr-fica\ConfigInicial - P5\ConfigInicial\Carga de Modelos.cpp(232,22): warning C4244: 'inicializando': conversión de 'double' a 'float'; posible pérdida de datos
-C:\Users\andre\OneDrive\Documentos\GitHub\Proyecto-Gr-fica\Proyecto-Gr-fica\ConfigInicial - P5\ConfigInicial\Carga de Modelos.cpp(421,11): warning C4244: '=': conversión de 'double' a 'float'; posible pérdida de datos
-C:\Users\andre\OneDrive\Documentos\GitHub\Proyecto-Gr-fica\Proyecto-Gr-fica\ConfigInicial - P5\ConfigInicial\Carga de Modelos.cpp(422,11): warning C4244: '=': conversión de 'double' a 'float'; posible pérdida de datos
-C:\Users\andre\OneDrive\Documentos\GitHub\Proyecto-Gr-fica\Proyecto-Gr-fica\ConfigInicial - P5\ConfigInicial\Carga de Modelos.cpp(427,16): warning C4244: 'inicializando': conversión de 'double' a 'float'; posible pérdida de datos
-C:\Users\andre\OneDrive\Documentos\GitHub\Proyecto-Gr-fica\Proyecto-Gr-fica\ConfigInicial - P5\ConfigInicial\Carga de Modelos.cpp(428,16): warning C4244: 'inicializando': conversión de 'double' a 'float'; posible pérdida de datos
-C:\Users\andre\OneDrive\Documentos\GitHub\Proyecto-Gr-fica\Proyecto-Gr-fica\ConfigInicial - P5\ConfigInicial\Carga de Modelos.cpp(429,10): warning C4244: '=': conversión de 'double' a 'float'; posible pérdida de datos
-C:\Users\andre\OneDrive\Documentos\GitHub\Proyecto-Gr-fica\Proyecto-Gr-fica\ConfigInicial - P5\ConfigInicial\Carga de Modelos.cpp(430,10): warning C4244: '=': conversión de 'double' a 'float'; posible pérdida de datos
+﻿C:\Program Files\Microsoft Visual Studio\2022\Community\MSBuild\Microsoft\VC\v170\Microsoft.CppBuild.targets(534,5): warning MSB8028: El directorio intermedio (Debug\) contiene archivos compartidos de otro proyecto (ConfigInicial-AndreaS.vcxproj). Esto puede dar lugar a un comportamiento incorrecto de limpieza y recompilación.
+  Maquina de estados.cpp
+C:\Users\andre\OneDrive\Documentos\GitHub\Proyecto-Gr-fica\Proyecto-Gr-fica\ConfigInicial - P5\ConfigInicial\Maquina de estados.cpp(179,28): warning C4244: 'inicializando': conversión de 'double' a 'float'; posible pérdida de datos
+C:\Users\andre\OneDrive\Documentos\GitHub\Proyecto-Gr-fica\Proyecto-Gr-fica\ConfigInicial - P5\ConfigInicial\Maquina de estados.cpp(421,17): warning C4244: '=': conversión de 'double' a 'float'; posible pérdida de datos
+C:\Users\andre\OneDrive\Documentos\GitHub\Proyecto-Gr-fica\Proyecto-Gr-fica\ConfigInicial - P5\ConfigInicial\Maquina de estados.cpp(422,17): warning C4244: '=': conversión de 'double' a 'float'; posible pérdida de datos
+C:\Users\andre\OneDrive\Documentos\GitHub\Proyecto-Gr-fica\Proyecto-Gr-fica\ConfigInicial - P5\ConfigInicial\Maquina de estados.cpp(427,19): warning C4244: 'inicializando': conversión de 'double' a 'float'; posible pérdida de datos
+C:\Users\andre\OneDrive\Documentos\GitHub\Proyecto-Gr-fica\Proyecto-Gr-fica\ConfigInicial - P5\ConfigInicial\Maquina de estados.cpp(428,19): warning C4244: 'inicializando': conversión de 'double' a 'float'; posible pérdida de datos
+C:\Users\andre\OneDrive\Documentos\GitHub\Proyecto-Gr-fica\Proyecto-Gr-fica\ConfigInicial - P5\ConfigInicial\Maquina de estados.cpp(429,13): warning C4244: '=': conversión de 'double' a 'float'; posible pérdida de datos
+C:\Users\andre\OneDrive\Documentos\GitHub\Proyecto-Gr-fica\Proyecto-Gr-fica\ConfigInicial - P5\ConfigInicial\Maquina de estados.cpp(430,13): warning C4244: '=': conversión de 'double' a 'float'; posible pérdida de datos
+LINK : warning LNK4098: la biblioteca predeterminada'MSVCRT' entra en conflicto con otras bibliotecas; use la biblioteca /NODEFAULTLIB:biblioteca
+soil2-debug.lib(etc1_utils.obj) : warning LNK4099: no se encontró PDB '' con 'soil2-debug.lib(etc1_utils.obj)' o en ''; se vinculará el objeto sin tener en cuenta información de depuración
 soil2-debug.lib(image_DXT.obj) : warning LNK4099: no se encontró PDB '' con 'soil2-debug.lib(image_DXT.obj)' o en ''; se vinculará el objeto sin tener en cuenta información de depuración
 soil2-debug.lib(image_helper.obj) : warning LNK4099: no se encontró PDB '' con 'soil2-debug.lib(image_helper.obj)' o en ''; se vinculará el objeto sin tener en cuenta información de depuración
 soil2-debug.lib(SOIL2.obj) : warning LNK4099: no se encontró PDB '' con 'soil2-debug.lib(SOIL2.obj)' o en ''; se vinculará el objeto sin tener en cuenta información de depuración
