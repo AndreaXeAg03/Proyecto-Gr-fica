@@ -31,7 +31,7 @@ void Inputs(GLFWwindow* window, float deltaTime);
 void Animation();
 
 // Window dimensions
-const GLuint WIDTH = 800, HEIGHT = 600;
+const GLuint WIDTH = 1600, HEIGHT = 1200;
 int SCREEN_WIDTH, SCREEN_HEIGHT;
 
 // Camera system
@@ -239,18 +239,20 @@ int main()
         glUniform1i(glGetUniformLocation(lightingShader.Program, "transparency"), 0);
         Floor.Draw(lightingShader);
 
-        // Draw DOOR
+        // Draw DOOR 
         model = glm::mat4(1.0f);
         model = glm::translate(model, doorPosition);
 
-        // Rotation around left edge (local Y axis)
-        float doorWidth = 0.4f; // Adjust based on actual door model width
-        model = glm::translate(model, glm::vec3(doorWidth / 2, 0.0f, 0.0f));
+        const float hingeOffsetX = 0.37f;
+        const float hingeOffsetY = 0.0f;
+        const float hingeOffsetZ = 0.3f;
+
+        model = glm::translate(model, glm::vec3(hingeOffsetX / 2, hingeOffsetY, hingeOffsetZ));
         model = glm::rotate(model, glm::radians(doorAngle), glm::vec3(0.0f, -1.0f, 0.0f));
-        model = glm::translate(model, glm::vec3(-doorWidth / 2, 0.0f, 0.0f));
+        model = glm::translate(model, glm::vec3(-hingeOffsetX / 2, -hingeOffsetY, -hingeOffsetZ));
 
         glUniformMatrix4fv(glGetUniformLocation(lightingShader.Program, "model"),
-            1, GL_FALSE, glm::value_ptr(model));
+                1, GL_FALSE, glm::value_ptr(model));
         Door.Draw(lightingShader);
 
         // Draw CHAIR with rotation around leg
@@ -292,15 +294,15 @@ int main()
         Glass.Draw(lightingShader);
         glDisable(GL_BLEND);
 
-        // Draw SECOND DOOR (transparent)
+        //// Draw SECOND DOOR (transparent)
         glEnable(GL_BLEND);
         glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
         model = glm::mat4(1.0f);
         model = glm::translate(model, doorPosition);
-        float door2Width = 0.4f;
-        model = glm::translate(model, glm::vec3(door2Width / 2, 0.0f, 0.0f));
-        model = glm::rotate(model, glm::radians(door2Angle), glm::vec3(0.0f, -1.0f, 0.0f));
-        model = glm::translate(model, glm::vec3(-door2Width / 2, 0.0f, 0.0f));
+
+        model = glm::translate(model, glm::vec3(hingeOffsetX / 2, hingeOffsetY, hingeOffsetZ));
+        model = glm::rotate(model, glm::radians(doorAngle), glm::vec3(0.0f, -1.0f, 0.0f));
+        model = glm::translate(model, glm::vec3(-hingeOffsetX / 2, -hingeOffsetY, -hingeOffsetZ));
 
         glUniformMatrix4fv(glGetUniformLocation(lightingShader.Program, "model"),
             1, GL_FALSE, glm::value_ptr(model));
