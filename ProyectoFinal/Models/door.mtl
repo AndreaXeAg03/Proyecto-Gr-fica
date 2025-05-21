@@ -1,0 +1,21 @@
+#
+## Alias OBJ Material File
+# Exported from SketchUp, (c) 2000-2012 Trimble Navigation Limited
+
+newmtl _79
+Ka 0.000000 0.000000 0.000000
+Kd 0.776471 0.776471 0.776471
+Ks 0.330000 0.330000 0.330000
+map_Kd door/_79.jpg
+
+newmtl M_0d9607c8_bbc5_4aa5_b378_b74cf78d8d98
+Ka 0.000000 0.000000 0.000000
+Kd 0.745098 0.745098 0.745098
+Ks 0.330000 0.330000 0.330000
+
+newmtl _102
+Ka 0.000000 0.000000 0.000000
+Kd 0.129412 0.129412 0.129412
+Ks 0.330000 0.330000 0.330000
+map_Kd door/_102.jpg
+
